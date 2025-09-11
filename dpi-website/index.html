@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DPi - Digital Product Innovation. We help your digital products stand out and win users.">
+    <title>DPi - Digital Product Innovation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/home.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles/home.css"></noscript>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Main Scripts -->
+    <script>
+        // Initialize Particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#818cf8"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 2,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#818cf8",
+                            "opacity": 0.2,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": true,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 0.5
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Modern Header Component -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">DPI</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#get-started" class="btn btn-primary nav-cta">Get Started</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Hero Section with Particles -->
+        <section class="hero" id="home">
+            <!-- Particles Background -->
+            <div id="particles-js" class="hero-particles"></div>
+            
+            <div class="container">
+                <!-- Hero Image on the Left -->
+                <div class="hero-left-container">
+                    <div class="hero-left-image" data-aos="fade-right" data-aos-delay="100">
+                        <img src="assets/images/hero_section_pic.jpg" alt="Digital Innovation Team" class="hero-team-image">
+                    </div>
+                </div>
+                
+                <div class="hero-content">
+                    <span class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-rocket"></i> Digital Product Innovation
+                    </span>
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                        Innovative Solutions for Your <span class="text-gradient">Digital Success</span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                        Transform your digital presence with cutting-edge solutions that drive growth, enhance engagement, and deliver measurable results. Partner with us to turn your vision into reality.
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="contact.html" class="btn btn-primary">
+                            Get Started
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="services.html" class="btn btn-outline">
+                            <i class="fas fa-play-circle"></i> Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <!-- Stats Section -->
+                <div class="hero-stats-container">
+                    <div class="hero-stats hero-main-stats" data-aos="fade-up" data-aos-delay="500">
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="600">
+                    <div class="hero-mockup">
+                        <div class="mockup-frame"></div>
+                        <div class="mockup-screen">
+                            <div class="screen-content">
+                                <div class="app-header">
+                                    <div class="app-controls">
+                                    <span class="control-dot"></span>
+                                    <span class="control-dot"></span>
+                                    <span class="control-dot"></span>
+                                </div>
+                                <div class="app-title">Dashboard</div>
+                                <div class="app-actions">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="chart">
+                                    <!-- Chart visualization would go here -->
+                                    <div class="chart-line" style="height: 30%; left: 15%;"></div>
+                                    <div class="chart-line" style="height: 60%; left: 30%;"></div>
+                                    <div class="chart-line" style="height: 45%; left: 45%;"></div>
+                                    <div class="chart-line" style="height: 75%; left: 60%;"></div>
+                                    <div class="chart-line" style="height: 55%; left: 75%;"></div>
+                                    <div class="chart-line" style="height: 85%; left: 90%;"></div>
+                                </div>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">$12.5K</span>
+                                        <span class="stat-label">Revenue</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">1.2K</span>
+                                        <span class="stat-label">Users</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">89%</span>
+                                        <span class="stat-label">Growth</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorative elements -->
+                <div class="decorative-shape shape-1"></div>
+                <div class="decorative-shape shape-2"></div>
+            </div>
+        </div>
+        
+        <!-- Animated background shapes -->
+        <div class="hero-shape-1"></div>
+        <div class="hero-shape-2"></div>
+        
+        <!-- Scroll indicator -->
+        <a href="#features" class="hero-scroll-indicator" data-aos="fade-up" data-aos-delay="700">
+            <span>Scroll Down</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-.53 14.03a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V8.25a.75.75 0 00-1.5 0v5.69l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </section>
+        
+        <!-- Modern Features Section -->
+        <section id="features" class="section section-features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Why Choose Us</span>
+                    <h2 class="section-title">Our Core Features</h2>
+                    <p class="section-description">We combine strategy, design, and technology to deliver exceptional digital products that drive results.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile-First Design</h3>
+                        <p>Responsive designs that look and work beautifully on any device, ensuring a seamless user experience across all platforms and screen sizes.</p>
+                        <a href="#" class="feature-link">Learn more 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Performance Optimized</h3>
+                        <p>Lightning-fast loading times and smooth interactions to keep users engaged and improve conversion rates.</p>
+                        <a href="#" class="feature-link">Learn more 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure & Reliable</h3>
+                        <p>Enterprise-grade security measures to protect your data and ensure maximum uptime for your business.</p>
+                        <a href="#" class="feature-link">Learn more 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Feature 5 -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h3>Easy Updates</h3>
+                        <p>Simple content management for hassle-free updates.</p>
+                    </div>
+                    
+                    <!-- Feature 6 -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Dedicated support team ready to assist you anytime.</p>
+                        <a href="#" class="feature-link">Learn more 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Feature 7 -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimized</h3>
+                        <p>Built with search engine optimization in mind to help you rank higher and attract more organic traffic.</p>
+                        <a href="#" class="feature-link">Learn more 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modern Testimonials Section -->
+        <section class="section section-testimonials">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Client Feedback</span>
+                    <h2 class="section-title">What Our Clients Say</h2>
+                    <p class="section-description">Don't just take our word for it. Here's what our clients have to say about working with us.</p>
+                </div>
+                <div class="testimonials-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Working with DPi was a game-changer for our business. Their team's expertise and attention to detail helped us create a stunning digital product that exceeded our expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="40" r="20" fill="#e0e7ff"/>
+                                    <circle cx="50" cy="120" r="60" fill="#e0e7ff"/>
+                                </svg>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span class="testimonial-company">CEO, TechStart</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The DPi team delivered exceptional results on time and within budget. Their strategic approach and creative solutions helped us achieve our business goals."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="40" r="20" fill="#e0e7ff"/>
+                                    <circle cx="50" cy="120" r="60" fill="#e0e7ff"/>
+                                </svg>
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <span class="testimonial-company">Product Manager, InnovateX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"DPi's team is professional, responsive, and truly cares about their clients' success. They transformed our vision into a beautiful, functional reality."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="40" r="20" fill="#e0e7ff"/>
+                                    <circle cx="50" cy="120" r="60" fill="#e0e7ff"/>
+                                </svg>
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <span class="testimonial-company">Marketing Director, GrowthHack</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-cta text-center mt-5">
+                    <a href="#" class="btn btn-outline-primary">Read More Testimonials</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modern CTA Section -->
+        <section class="section section-cta" id="get-started">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-text" data-aos="fade-up">
+                        <span class="section-subtitle">Ready to Begin?</span>
+                        <h2 class="section-title">Start Your Digital Transformation Today</h2>
+                        <p class="section-description">Join hundreds of businesses that trust DPi to transform their digital presence and achieve remarkable results. Let's build something amazing together.</p>
+                        
+                        <div class="cta-stats" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat">
+                                <span class="stat-value" data-count="12.5">0</span>
+                                <span class="stat-suffix">K+</span>
+                                <span class="stat-label">Revenue</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value" data-count="1200">0</span>
+                                <span class="stat-suffix">+</span>
+                                <span class="stat-label">Users</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value" data-count="89">0</span>
+                                <span class="stat-suffix">%</span>
+                                <span class="stat-label">Growth</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-buttons">
+                            <a href="contact.html" class="btn btn-primary">
+                                Get Started Now
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modern Newsletter Section -->
+        <section class="section section-newsletter">
+            <div class="container">
+                <div class="newsletter-content" data-aos="fade-up">
+                    <div class="newsletter-text">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to our newsletter for the latest insights, updates, and exclusive content delivered straight to your inbox.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                placeholder="Enter your email address" 
+                                required
+                                aria-label="Email address"
+                            >
+                            <button type="submit" class="btn btn-primary">
+                                Subscribe
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="checkbox" 
+                                class="form-check-input" 
+                                id="privacyCheck" 
+                                required
+                                aria-label="Agree to privacy policy"
+                            >
+                            <label class="form-check-label" for="privacyCheck">
+                                I agree to the <a href="privacy-policy.html">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3 class="footer-logo">DPi</h3>
+                    <p>Transforming digital experiences through innovative solutions and user-centric design.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@dpi.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Digital Lane, Tech City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                <div class="copyright">
+                    &copy; <span id="current-year">2025</span> DPi. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    mirror: false
+                });
+            }
+
+            // Set current year in footer
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // Preconnect to external domains
+            const preconnectDomains = [
+                'https://fonts.gstatic.com',
+                'https://randomuser.me'
+            ];
+            
+            preconnectDomains.forEach(domain => {
+                const link = document.createElement('link');
+                link.rel = 'preconnect';
+                link.href = domain;
+                link.crossOrigin = 'anonymous';
+                document.head.appendChild(link);
+            });
+
+            // Load local scripts
+            const scripts = [
+                'js/main.js',
+                'js/counter-animation.js',
+                'js/performance.js'
+            ];
+
+            scripts.forEach(src => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.defer = true;
+                script.onerror = () => console.warn(`Failed to load script: ${src}`);
+                document.body.appendChild(script);
+            });
+        });
+
+        // Global error handling
+        window.addEventListener('error', function(e) {
+            console.error('Error:', e.message, 'in', e.filename, 'line', e.lineno);
+        }, true);
+    </script>
+    
+    <!-- Counter Animation -->
+    <script src="js/counter-animation.js"></script>
+</body>
+</html>
