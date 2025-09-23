@@ -52,18 +52,6 @@
     </header>
 
     <main id="main-content" tabindex="-1">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1 class="page-title">About DPi</h1>
-                <nav aria-label="breadcrumb" class="breadcrumb">
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>About Us</li>
-                    </ol>
-                </nav>
-            </div>
-        </section>
 
         <!-- Our Story -->
         <section class="section">
@@ -75,6 +63,9 @@
                 </div>
                 
                 <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our team working together" loading="lazy">
+                    </div>
                     <div class="about-text">
                         <p>Founded in 2020, DPi has been at the forefront of digital product innovation, helping businesses of all sizes create exceptional digital experiences that drive results. What started as a small team of passionate designers and developers has grown into a full-service digital product agency with clients around the globe.</p>
                         
@@ -98,10 +89,6 @@
                                 <span class="stat-label">Countries Served</span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our team working together" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -221,9 +208,20 @@
                     </div>
                 </div>
                 
-                <div class="text-center mt-5" data-aos="fade-up">
-                    <p class="mb-4">Want to join our growing team?</p>
-                    <a href="contact.html" class="btn btn-primary">View Open Positions</a>
+                </div>
+                
+                <!-- Join Our Team CTA -->
+                <div class="join-our-team" data-aos="fade-up">
+                    <div class="container">
+                        <h2>Join Our Growing Team</h2>
+                        <p>Be part of a dynamic team that's shaping the future of digital experiences. We're always looking for talented individuals who are passionate about innovation and excellence.</p>
+                        <a href="contact.html" class="btn-join">
+                            View Open Positions
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="decorative-shape shape-1"></div>
+                        <div class="decorative-shape shape-2"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -301,57 +299,6 @@
 
     <!-- JavaScript -->
     <script src="js/main.js" type="module"></script>
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                offset: 100
-            });
-            
-            // Animate stats counter
-            const statNumbers = document.querySelectorAll('.stat-number');
-            
-            const animateStats = () => {
-                statNumbers.forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-count'));
-                    const duration = 2000; // 2 seconds
-                    const step = target / (duration / 16); // 60fps
-                    let current = 0;
-                    
-                    const updateCount = () => {
-                        current += step;
-                        if (current < target) {
-                            stat.textContent = Math.ceil(current);
-                            requestAnimationFrame(updateCount);
-                        } else {
-                            stat.textContent = target;
-                        }
-                    };
-                    
-                    updateCount();
-                });
-            };
-            
-            // Only animate when stats are in viewport
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateStats();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            document.querySelectorAll('.stats-grid').forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script src="js/about.js" defer></script>
 </body>
 </html>
