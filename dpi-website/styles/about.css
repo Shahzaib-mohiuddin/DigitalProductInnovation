@@ -546,25 +546,25 @@
 /* Modern Values Grid */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.75rem;
+    margin-top: 2.5rem;
     position: relative;
     z-index: 1;
 }
 
 .value-card {
     background: rgba(255, 255, 255, 0.7);
-    border-radius: var(--radius-xl);
-    padding: 3rem 2.5rem;
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.75rem;
     text-align: center;
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.05);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .value-card::before {
@@ -591,20 +591,20 @@
 }
 
 .value-icon {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 2rem;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
     background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-radius: 25% 75% 65% 35% / 35% 35% 65% 65%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     color: var(--color-primary);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
-    box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 8px 20px -8px rgba(79, 70, 229, 0.15);
 }
 
 .value-icon::before {
@@ -634,8 +634,8 @@
 }
 
 .value-card h3 {
-    font-size: 1.5rem;
-    margin: 0 0 1.25rem;
+    font-size: 1.25rem;
+    margin: 0 0 0.75rem;
     color: var(--color-gray-900);
     font-weight: 700;
     position: relative;
@@ -748,11 +748,10 @@ html {
 
 /* Modern Team Section with Glassmorphism */
 .team-section {
-    padding: 10rem 0;
+    padding: 6rem 0 8rem;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    background-image: 
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(241, 245, 249, 0.95) 100%),
         radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.04) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.04) 0%, transparent 40%);
 }
@@ -796,32 +795,38 @@ html {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2.5rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
     position: relative;
     z-index: 1;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
 }
 
 .team-member {
     background: rgba(255, 255, 255, 0.7);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.05);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: center;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .team-member::before {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     padding: 2px;
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -834,9 +839,9 @@ html {
 }
 
 .team-member:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
     border-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -846,10 +851,10 @@ html {
 
 .member-image {
     width: 100%;
-    height: 320px;
+    height: 240px;
     overflow: hidden;
     position: relative;
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .member-image::before {
@@ -877,15 +882,19 @@ html {
 }
 
 .team-member:hover .member-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .member-info {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.25rem;
     position: relative;
     z-index: 2;
-    background: transparent;
-    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .team-member:hover .member-info {
@@ -893,11 +902,12 @@ html {
 }
 
 .member-info h3 {
-    font-size: 1.375rem;
+    font-size: 1.125rem;
     margin: 0 0 0.25rem;
     color: var(--color-gray-900);
-    font-weight: 700;
+    font-weight: 600;
     transition: all 0.3s ease;
+    line-height: 1.3;
 }
 
 .team-member:hover .member-info h3 {
@@ -906,11 +916,11 @@ html {
 
 .member-info .position {
     color: var(--color-gray-600);
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
     font-weight: 500;
-    margin: 0 0 1.25rem;
-    display: block;
+    margin: 0;
     transition: all 0.3s ease;
+    line-height: 1.4;
 }
 
 .team-member:hover .member-info .position {
@@ -918,13 +928,13 @@ html {
 }
 
 .social-links {
+    margin-top: 0.75rem;
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 1.25rem;
     opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-member:hover .social-links {
@@ -1163,6 +1173,7 @@ html {
     
     .values-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 }
 
@@ -1388,7 +1399,14 @@ html {
 
 @media (max-width: 575.98px) {
     .team-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .member-image {
+        height: 180px;
     }
     
     .values-grid {
