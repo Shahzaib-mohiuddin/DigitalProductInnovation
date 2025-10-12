@@ -11,7 +11,10 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modern-navbar.css">
+    <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/about-header.css">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,34 +25,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Skip to main content link for screen readers -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Header Component -->
-    <header class="header">
-        <nav class="navbar container">
-            <a href="/" class="logo">
-                <span class="logo-text">DPi</span>
+    <!-- Modern Navbar -->
+    <div class="navbar-container" id="navbar">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <span>DPI</span>
             </a>
             
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link active">
+                            <i class="fas fa-user"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">
+                            <i class="fas fa-cogs"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <a href="contact.html" class="cta-button">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
-    </header>
+    </div>
 
     <main id="main-content" tabindex="-1">
 
@@ -249,7 +269,6 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Our Work</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -288,8 +307,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js" type="module"></script>
+    <!-- Modern Navbar JS -->
+    <script src="js/modern-navbar.js" type="module"></script>
     <script src="js/about.js" defer></script>
 </body>
 </html>

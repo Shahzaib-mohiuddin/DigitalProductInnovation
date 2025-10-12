@@ -1,0 +1,71 @@
+/* Consistent CTA Button Styles */
+.cta-card .btn-primary,
+.hero-cta .btn-primary,
+.cta-content .btn-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+    color: white !important;
+    padding: 0.8rem 2rem !important;
+    border-radius: 50px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    box-shadow: 0 4px 15px -3px rgba(79, 70, 229, 0.4) !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 1rem !important;
+}
+
+.cta-card .btn-primary::after,
+.hero-cta .btn-primary::after,
+.cta-content .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.cta-card .btn-primary:hover,
+.hero-cta .btn-primary:hover,
+.cta-content .btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4) !important;
+}
+
+.cta-card .btn-primary:hover::after,
+.hero-cta .btn-primary:hover::after,
+.cta-content .btn-primary:hover::after {
+    opacity: 1;
+}
+
+/* Ensure the arrow icon has proper spacing */
+.cta-card .btn-primary i.fas,
+.hero-cta .btn-primary i.fas,
+.cta-content .btn-primary i.fas {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    font-size: 0.9em;
+}
+
+.cta-card .btn-primary:hover i.fas,
+.hero-cta .btn-primary:hover i.fas,
+.cta-content .btn-primary:hover i.fas {
+    transform: translateX(3px);
+}
+
+/* Specific styles for CTA card button */
+.cta-card .btn-primary {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2.5rem !important;
+    font-size: 1.1rem !important;
+}

@@ -1,0 +1,17 @@
+/* Navbar Overrides */
+
+/* Remove the blue indicator dot from active nav links */
+.nav-link::after {
+    display: none !important;
+}
+
+/* Ensure no other indicators appear */
+.nav-link.active {
+    position: relative;
+}
+
+/* Remove any border or box-shadow that might be used as an indicator */
+.nav-link.active {
+    box-shadow: none !important;
+    border-bottom: none !important;
+}

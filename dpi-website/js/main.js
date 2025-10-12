@@ -108,38 +108,27 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleScroll() {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Toggle scrolled class on header
+        // Toggle scrolled class on header for styling changes
         if (header) {
-            // Always apply transform to force hardware acceleration
-            header.style.willChange = 'transform, backdrop-filter';
+            // Always keep the header visible at the top
+            header.style.transform = 'translate3d(0, 0, 0)';
             
-            // Update scrolled state
+            // Update scrolled state for styling (like shadow, background, etc.)
             if (currentScroll > 10) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
             
-            // Smooth header show/hide on scroll
-            if (currentScroll > lastScrollTop && currentScroll > 100) {
-                // Scrolling down
-                header.style.transform = 'translate3d(0, -100%, 0)';
-            } else {
-                // Scrolling up or at top
-                header.style.transform = 'translate3d(0, 0, 0)';
-                
-                // Force hardware acceleration and maintain transparency
-                header.style.backdropFilter = 'blur(12px)';
-                header.style.webkitBackdropFilter = 'blur(12px)';
-            }
+            // Ensure header stays at the top
+            header.style.position = 'fixed';
+            header.style.top = '0';
+            header.style.left = '0';
+            header.style.right = '0';
             
-            // Reset will-change after animations complete
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                if (header) {
-                    header.style.willChange = 'auto';
-                }
-            }, 200);
+            // Maintain blur effect
+            header.style.backdropFilter = 'blur(12px)';
+            header.style.webkitBackdropFilter = 'blur(12px)';
         }
         
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;

@@ -11,50 +11,69 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modern-navbar.css">
+    <link rel="stylesheet" href="styles/cta-buttons.css">
     <link rel="stylesheet" href="styles/services.css">
+    <link rel="stylesheet" href="styles/services-navbar-fix.css">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Skip to main content link for screen readers -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Header Component -->
-    <header class="header">
-        <nav class="navbar container">
-            <a href="/" class="logo">
-                <span class="logo-text">DPi</span>
+<body class="services-page">
+    <!-- Modern Navbar -->
+    <div class="navbar-container" id="navbar">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <span>DPI</span>
             </a>
             
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
-                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            <i class="fas fa-user"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link active">
+                            <i class="fas fa-cogs"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <a href="contact.html" class="cta-button">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
-    </header>
+    </div>
 
     <main id="main-content" tabindex="-1">
         <!-- Hero Section -->
         <section class="services-hero">
             <div class="container">
+{{ ... }}
                 <h1>Digital Solutions That Drive Success</h1>
                 <p>We craft exceptional digital experiences that help businesses grow, engage users, and achieve their goals through innovative design and development.</p>
                 <a href="#services" class="btn btn-light btn-lg">Explore Our Services</a>
@@ -62,83 +81,182 @@
         </section>
 
         <!-- Services Overview -->
-        <section id="services" class="section">
+        <section id="services" class="services-overview">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-subtitle">Our Expertise</span>
-                    <h2 class="section-title">Tailored Digital Solutions</h2>
-                    <div class="section-divider center"></div>
-                    <p class="section-description">We combine creativity with technical excellence to deliver solutions that drive real business results.</p>
+                <div class="services-header text-center">
+                    <div class="services-header-content" data-aos="fade-up">
+                        <span class="section-tag">Our Expertise</span>
+                        <h2 class="section-title">Tailored Digital Solutions</h2>
+                        <div class="section-divider">
+                            <span class="divider-line"></span>
+                            <span class="divider-icon"><i class="fas fa-asterisk"></i></span>
+                            <span class="divider-line"></span>
+                        </div>
+                        <p class="section-description">We combine creativity with technical excellence to deliver innovative solutions that drive real business growth and success in the digital landscape.</p>
+                    </div>
+                    <div class="services-pattern" aria-hidden="true">
+                        <div class="pattern-dot"></div>
+                        <div class="pattern-line"></div>
+                        <div class="pattern-shape"></div>
+                    </div>
                 </div>
 
                 <!-- Services Grid -->
                 <div class="services-grid">
-                    <!-- Service 1 -->
+                    <!-- Mobile App Development -->
                     <div class="service-card" data-aos="fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-paint-brush"></i>
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Mobile App Development</h3>
+                            <p>Native and cross-platform mobile applications that deliver seamless experiences across devices.</p>
+                            <div class="service-focus">
+                                <strong>Focus:</strong> Creating powerful, user-friendly mobile solutions
+                            </div>
+                            <div class="service-features-wrapper">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> iOS & Android Apps</li>
+                                    <li><i class="fas fa-check"></i> React Native</li>
+                                    <li><i class="fas fa-check"></i> App Optimization</li>
+                                    <li><i class="fas fa-check"></i> Offline Capabilities</li>
+                                </ul>
+                            </div>
+                            <div class="service-cta">
+                                <a href="#" class="btn btn-primary">Explore Service <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <h3>UI/UX Design</h3>
-                        <p>Beautiful, intuitive interfaces that provide exceptional user experiences and drive engagement.</p>
-                        <ul class="service-features">
-                            <li>User Research & Testing</li>
-                            <li>Wireframing & Prototyping</li>
-                            <li>Visual Design</li>
-                            <li>Interaction Design</li>
-                            <li>Design Systems</li>
-                        </ul>
-                        <a href="#" class="btn btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-card-hover"></div>
                     </div>
 
-                    <!-- Service 2 -->
+                    <!-- Product Strategy -->
                     <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Product Strategy</h3>
+                            <p>Data-driven strategies to define, design, and deliver successful digital products.</p>
+                            <div class="service-focus">
+                                <strong>Focus:</strong> Aligning solutions with business goals
+                            </div>
+                            <div class="service-features-wrapper">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Market Research</li>
+                                    <li><i class="fas fa-check"></i> User Personas</li>
+                                    <li><i class="fas fa-check"></i> Roadmapping</li>
+                                    <li><i class="fas fa-check"></i> Growth Strategy</li>
+                                </ul>
+                            </div>
+                            <div class="service-cta">
+                                <a href="#" class="btn btn-primary">Explore Service <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <h3>Web Development</h3>
-                        <p>High-performance, responsive websites built with the latest technologies and best practices.</p>
-                        <ul class="service-features">
-                            <li>Custom Web Applications</li>
-                            <li>E-commerce Solutions</li>
-                            <li>Progressive Web Apps</li>
-                            <li>API Integration</li>
-                            <li>Performance Optimization</li>
-                        </ul>
-                        <a href="#" class="btn btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-card-hover"></div>
                     </div>
 
-                    <!-- Service 3 -->
+                    <!-- User-Friendly Design -->
                     <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <h3>User-Friendly Design</h3>
+                            <p>Simplify navigation for a seamless experience that keeps users engaged and satisfied.</p>
+                            <div class="service-focus">
+                                <strong>Focus:</strong> Intuitive and accessible interfaces
+                            </div>
+                            <div class="service-features-wrapper">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Intuitive UI/UX</li>
+                                    <li><i class="fas fa-check"></i> User Flows</li>
+                                    <li><i class="fas fa-check"></i> Accessibility</li>
+                                    <li><i class="fas fa-check"></i> User Testing</li>
+                                </ul>
+                            </div>
+                            <div class="service-cta">
+                                <a href="#" class="btn btn-primary">Explore Service <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <h3>Mobile App Development</h3>
-                        <p>Native and cross-platform mobile applications that deliver seamless experiences across devices.</p>
-                        <ul class="service-features">
-                            <li>iOS & Android Apps</li>
-                            <li>React Native Development</li>
-                            <li>App Store Optimization</li>
-                            <li>Push Notifications</li>
-                            <li>Offline Capabilities</li>
-                        </ul>
-                        <a href="#" class="btn btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-card-hover"></div>
                     </div>
 
-                    <!-- Service 4 -->
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-icon">
-                            <i class="fas fa-search"></i>
+                    <!-- Performance Boost -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>Performance Boost</h3>
+                            <p>Improve speed and functionality for optimal user experience and satisfaction.</p>
+                            <div class="service-focus">
+                                <strong>Focus:</strong> Technical excellence and speed
+                            </div>
+                            <div class="service-features-wrapper">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Speed Optimization</li>
+                                    <li><i class="fas fa-check"></i> Performance Monitoring</li>
+                                    <li><i class="fas fa-check"></i> Resource Management</li>
+                                    <li><i class="fas fa-check"></i> Load Optimization</li>
+                                </ul>
+                            </div>
+                            <div class="service-cta">
+                                <a href="#" class="btn btn-primary">Explore Service <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <h3>Product Strategy</h3>
-                        <p>Data-driven strategies to define, design, and deliver successful digital products.</p>
-                        <ul class="service-features">
-                            <li>Market Research</li>
-                            <li>User Personas</li>
-                            <li>Product Roadmapping</li>
-                            <li>MVP Development</li>
-                            <li>Growth Strategy</li>
-                        </ul>
-                        <a href="#" class="btn btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-card-hover"></div>
+                    </div>
+
+                    <!-- Global Engagement -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Global Engagement</h3>
+                            <p>Build features that connect with users worldwide across different markets and cultures.</p>
+                            <div class="service-focus">
+                                <strong>Focus:</strong> Cross-cultural digital solutions
+                            </div>
+                            <div class="service-features-wrapper">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Multilingual Support</li>
+                                    <li><i class="fas fa-check"></i> Cultural Adaptation</li>
+                                    <li><i class="fas fa-check"></i> International UX/UI</li>
+                                    <li><i class="fas fa-check"></i> Market Research</li>
+                                </ul>
+                            </div>
+                            <div class="service-cta">
+                                <a href="#" class="btn btn-primary">Explore Service <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="service-card-hover"></div>
+                    </div>
+
+                    <!-- Custom Solutions -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Custom Solutions</h3>
+                            <p>Tailored enhancements designed specifically for your unique needs and goals.</p>
+                            <div class="service-focus">
+                                <strong>Focus:</strong> Personalized digital solutions
+                            </div>
+                            <div class="service-features-wrapper">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Bespoke Development</li>
+                                    <li><i class="fas fa-check"></i> Custom Features</li>
+                                    <li><i class="fas fa-check"></i> System Integration</li>
+                                    <li><i class="fas fa-check"></i> Scalable Architecture</li>
+                                </ul>
+                            </div>
+                            <div class="service-cta">
+                                <a href="#" class="btn btn-primary">Explore Service <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="service-card-hover"></div>
                     </div>
                 </div>
             </div>
@@ -147,11 +265,15 @@
         <!-- Process Section -->
         <section class="process-section">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-subtitle">Our Process</span>
-                    <h2 class="section-title">How We Deliver Excellence</h2>
-                    <div class="section-divider center"></div>
-                    <p class="section-description">Our proven 6-step process ensures your project's success from concept to launch.</p>
+                <div class="services-header text-center">
+                    <div class="services-header-content" data-aos="fade-up">
+                        <span class="section-tag">Our Process</span>
+                        <h2 class="section-title">How We Deliver Excellence</h2>
+                        <div class="section-divider">
+                            <span class="divider-line"></span>
+                        </div>
+                        <p class="section-description">Our proven 6-step process ensures your project's success from concept to launch.</p>
+                    </div>
                 </div>
 
                 <div class="process-steps">
@@ -190,49 +312,27 @@
                         <h3>Launch & Support</h3>
                         <p>We deploy your product and provide ongoing support and maintenance to ensure its continued success.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-subtitle">Testimonials</span>
-                    <h2 class="section-title">What Our Clients Say</h2>
-                    <div class="section-divider center"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        Working with DPi was a game-changer for our business. Their team delivered exceptional results that exceeded our expectations. The attention to detail and creative approach set them apart from other agencies we've worked with.
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO, TechStart Inc.</p>
+                    <div class="cta-square-container">
+                        <div class="cta-card">
+                            <div class="cta-content">
+                                <h3 class="cta-title">Ready to Start?</h3>
+                                <p class="cta-description">Let's discuss your project today.</p>
+                                <a href="contact.html" class="btn btn-primary">
+                                    Get Started
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section bg-dark text-white">
-            <div class="container">
-                <div class="cta-content text-center">
-                    <h2 class="text-white">Let's Build Something Amazing Together</h2>
-                    <p class="text-white-80">Get in touch to discuss your project and see how we can help bring your vision to life.</p>
-                    <div class="cta-buttons" style="justify-content: center;">
-                        <a href="contact.html" class="btn btn-primary btn-lg">Start Your Project</a>
-                        <a href="portfolio.html" class="btn btn-outline-light btn-lg ml-3">View Our Work</a>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
 
+    <!-- Modern Navbar JS -->
+    <script src="js/modern-navbar.js"></script>
+    
     <!-- Modern Footer Component -->
     <footer class="footer">
         <div class="footer-content">
@@ -254,7 +354,6 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Our Work</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

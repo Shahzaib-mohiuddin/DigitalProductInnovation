@@ -27,6 +27,58 @@
     --border-radius-xl: 30px;
 }
 
+/* Reset body margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar styles have been moved to modern-navbar.css for consistency */
+
+.btn-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px -3px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -36,11 +88,12 @@
     overflow: hidden;
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     color: #fff;
-    padding: 0;
-    margin-top: 70px; /* Account for fixed header */
+    padding-top: 90px; /* Increased top padding to account for fixed header */
+    margin: 0;
     isolation: isolate;
-    /* Add smooth scrolling for anchor links */
-    scroll-margin-top: 90px;
+    scroll-margin-top: 70px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .hero-particles {
@@ -75,12 +128,13 @@
     grid-template-columns: 1.2fr 1.8fr;
     align-items: flex-start;
     gap: 4rem 2rem;
-    padding: 100px 2rem 2rem;
+    padding: 2rem 2rem 4rem;
     max-width: 1400px;
     margin: 0 auto;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 70px);
     box-sizing: border-box;
     grid-template-rows: auto 1fr;
+    align-items: center;
 }
 
 /* Hero Left Container */
@@ -1989,8 +2043,69 @@ margin-top: 3rem;
 }
 
 @media (max-width: 991.98px) {
+    .header {
+        padding: 0 1.5rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        height: calc(100vh - 70px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        justify-content: flex-start;
+        gap: 1rem;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
     .hero {
-        padding: 90px 0 50px;
+        padding: 70px 0 0;
         min-height: auto;
     }
     

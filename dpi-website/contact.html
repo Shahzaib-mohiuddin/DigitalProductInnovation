@@ -11,6 +11,8 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modern-navbar.css">
+    <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/contact.css">
     
     <!-- Font Awesome for icons -->
@@ -30,53 +32,67 @@
     crossorigin=""/>
 </head>
 <body>
-    <!-- Skip to main content link for screen readers -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Header Component -->
-    <header class="header">
-        <nav class="navbar container">
-            <a href="index.html" class="logo">
-                <span class="logo-text">DPi</span>
+    <!-- Modern Navbar -->
+    <div class="navbar-container" id="navbar">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <span>DPI</span>
             </a>
             
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            <i class="fas fa-user"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">
+                            <i class="fas fa-cogs"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
                 </ul>
-                <a href="contact.html#contact-form" class="btn btn-primary">Get Started</a>
+                <a href="#contact-form" class="cta-button">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
-    </header>
+    </div>
 
     <main id="main-content" tabindex="-1">
-        <!-- Page Header -->
-        <section class="page-header">
+        <!-- Hero Section -->
+        <section class="contact-hero">
             <div class="container">
-                <h1 class="page-title">Contact Us</h1>
-                <nav aria-label="breadcrumb" class="breadcrumb">
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Contact</li>
-                    </ol>
-                </nav>
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>Let's Build Something Amazing Together</h1>
+                    <p>Have a project in mind or want to learn more about our services? We'd love to hear from you.</p>
+                </div>
             </div>
         </section>
 
         <!-- Contact Info Section -->
-        <section class="section">
+        <section class="section contact-info-section" style="padding-top: 4rem;">
             <div class="container">
-                <div class="section-header text-center">
+                <div class="section-header text-center" data-aos="fade-up">
                     <span class="section-subtitle">Get in Touch</span>
                     <h2 class="section-title">We'd Love to Hear From You</h2>
                     <div class="section-divider center"></div>
@@ -85,147 +101,201 @@
 
                 <div class="contact-info-grid">
                     <!-- Contact Info Card 1 -->
-                    <div class="contact-info-card" data-aos="fade-up">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-card-inner">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Our Location</h3>
+                            <p>123 Digital Lane<br>Tech City, TC 12345<br>United States</p>
+                            <a href="#map" class="btn btn-outline btn-sm">
+                                <span>View on Map</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <h3>Our Location</h3>
-                        <p>123 Digital Lane<br>Tech City, TC 12345<br>United States</p>
-                        <a href="#map" class="btn btn-link">View on Map <i class="fas fa-arrow-right"></i></a>
+                        <div class="contact-card-hover"></div>
                     </div>
 
                     <!-- Contact Info Card 2 -->
-                    <div class="contact-info-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                    <div class="contact-info-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="contact-card-inner">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email Us</h3>
+                            <div class="contact-info-links">
+                                <a href="mailto:hello@dpi.com">hello@dpi.com</a>
+                                <a href="mailto:support@dpi.com">support@dpi.com</a>
+                            </div>
+                            <a href="mailto:hello@dpi.com" class="btn btn-outline btn-sm">
+                                <span>Send an Email</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <h3>Email Us</h3>
-                        <p><a href="mailto:hello@dpi.com">hello@dpi.com</a><br><a href="mailto:support@dpi.com">support@dpi.com</a></p>
-                        <a href="mailto:hello@dpi.com" class="btn btn-link">Send an Email <i class="fas fa-arrow-right"></i></a>
+                        <div class="contact-card-hover"></div>
                     </div>
 
                     <!-- Contact Info Card 3 -->
                     <div class="contact-info-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                        <div class="contact-card-inner">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                            <p>+1 (555) 123-4567<br>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                            <a href="tel:+15551234567" class="btn btn-outline btn-sm">
+                                <span>Call Now</span>
+                                <i class="fas fa-phone-alt"></i>
+                            </a>
                         </div>
-                        <h3>Call Us</h3>
-                        <p>+1 (555) 123-4567<br>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                        <a href="tel:+15551234567" class="btn btn-link">Call Now <i class="fas fa-arrow-right"></i></a>
+                        <div class="contact-card-hover"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Form Section -->
-        <section class="section bg-light" id="contact-form">
+        <section class="section contact-form-section" id="contact-form" style="background-color: #f8faff; padding: 5rem 0;">
             <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2 class="section-title">How Can We Help You?</h2>
+                    <div class="section-divider center"></div>
+                    <p class="section-description">We're here to answer any questions you may have about our services. Reach out to us and we'll respond as soon as we can.</p>
+                </div>
+                
                 <div class="contact-form-container">
                     <div class="contact-form-content" data-aos="fade-right">
-                        <h2>Send Us a Message</h2>
-                        <p>Fill out the form below and our team will get back to you as soon as possible. We typically respond within 24 hours.</p>
+                        <div class="form-header">
+                            <h3>Send Us a Message</h3>
+                            <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+                        </div>
                         
                         <form id="contactForm" class="contact-form" novalidate>
-                            <div class="form-group">
-                                <label for="name">Your Name <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" required>
-                                <div class="error-message" id="nameError"></div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" id="name" name="name" class="form-control" required>
+                                        <label for="name">Your Name <span class="required">*</span></label>
+                                        <span class="input-icon"><i class="far fa-user"></i></span>
+                                    </div>
+                                    <div class="error-message" id="nameError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" id="email" name="email" class="form-control" required>
+                                        <label for="email">Email Address <span class="required">*</span></label>
+                                        <span class="input-icon"><i class="far fa-envelope"></i></span>
+                                    </div>
+                                    <div class="error-message" id="emailError"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="tel" id="phone" name="phone" class="form-control">
+                                        <label for="phone">Phone Number (Optional)</label>
+                                        <span class="input-icon"><i class="fas fa-phone"></i></span>
+                                    </div>
+                                    <div class="error-message" id="phoneError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <select id="subject" name="subject" class="form-control" required>
+                                            <option value="" disabled selected></option>
+                                            <option value="General Inquiry">General Inquiry</option>
+                                            <option value="Project Quote">Project Quote</option>
+                                            <option value="Partnership">Partnership</option>
+                                            <option value="Support">Support</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <label for="subject">How can we help? <span class="required">*</span></label>
+                                        <span class="input-icon"><i class="fas fa-tag"></i></span>
+                                    </div>
+                                    <div class="error-message" id="subjectError"></div>
+                                </div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" required>
-                                <div class="error-message" id="emailError"></div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                                <div class="error-message" id="phoneError"></div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Subject <span class="required">*</span></label>
-                                <input type="text" id="subject" name="subject" required>
-                                <div class="error-message" id="subjectError"></div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Your Message <span class="required">*</span></label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <div class="input-group textarea-icon">
+                                    <textarea id="message" name="message" class="form-control" rows="5" required placeholder="Tell us about your project or question..."></textarea>
+                                    <label for="message">Your Message <span class="required">*</span></label>
+                                    <span class="input-icon"><i class="far fa-comment-dots"></i></span>
+                                </div>
                                 <div class="error-message" id="messageError"></div>
+                                <div class="form-hint">Please include as much detail as possible</div>
                             </div>
                             
-                            <div class="form-group form-checkbox">
-                                <input type="checkbox" id="privacy" name="privacy" required>
-                                <label for="privacy">I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a> <span class="required">*</span></label>
+                            <div class="form-checkbox">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <span class="checkmark"></span>
+                                    <label for="privacy" class="checkbox-label">I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a> <span class="required">*</span></label>
+                                </div>
                                 <div class="error-message" id="privacyError"></div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
                         </form>
                         
-                        <div id="formSuccess" class="form-success" style="display: none;">
-                            <div class="success-icon">
-                                <i class="fas fa-check-circle"></i>
+                        <div id="formSuccess" class="form-success">
+                            <div class="success-content">
+                                <div class="success-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <h3>Message Sent Successfully!</h3>
+                                <p>Thank you for reaching out. We've received your message and will get back to you within 24 hours.</p>
+                                <button id="sendAnother" class="btn btn-outline">
+                                    <span>Send Another Message</span>
+                                    <i class="fas fa-redo"></i>
+                                </button>
                             </div>
-                            <h3>Thank You!</h3>
-                            <p>Your message has been sent successfully. We'll get back to you soon!</p>
                         </div>
                     </div>
                     
-                    <div class="contact-faq" data-aos="fade-left">
-                        <h3>Frequently Asked Questions</h3>
-                        
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <button class="accordion-header" aria-expanded="false" aria-controls="faq1">
-                                    What services do you offer?
-                                    <span class="accordion-icon"></span>
-                                </button>
-                                <div id="faq1" class="accordion-content">
-                                    <p>We offer a wide range of digital product services including UI/UX design, web development, mobile app development, product strategy, and more. Visit our <a href="services.html">Services</a> page for a complete list of what we offer.</p>
+                    <div class="contact-details" data-aos="fade-left">
+                        <div class="details-card">
+                            <h3>Contact Information</h3>
+                            <p>Fill out the form or reach out directly using the contact details below.</p>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Our Office</h4>
+                                    <p>123 Digital Lane<br>Tech City, TC 12345<br>United States</p>
                                 </div>
                             </div>
                             
-                            <div class="accordion-item">
-                                <button class="accordion-header" aria-expanded="false" aria-controls="faq2">
-                                    How much do your services cost?
-                                    <span class="accordion-icon"></span>
-                                </button>
-                                <div id="faq2" class="accordion-content">
-                                    <p>Project costs vary depending on the scope, complexity, and requirements. We provide custom quotes after understanding your specific needs. Contact us for a free consultation and we'll provide a detailed estimate.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <button class="accordion-header" aria-expanded="false" aria-controls="faq3">
-                                    How long does a typical project take?
-                                    <span class="accordion-icon"></span>
-                                </button>
-                                <div id="faq3" class="accordion-content">
-                                    <p>Project timelines depend on the scope and complexity. A simple website might take 4-6 weeks, while a complex web application could take several months. We'll provide a detailed timeline during our initial consultation.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <button class="accordion-header" aria-expanded="false" aria-controls="faq4">
-                                    Do you offer ongoing support?
-                                    <span class="accordion-icon"></span>
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </button>
                                 <div id="faq4" class="accordion-content">
-                                    <p>Yes, we offer various support and maintenance plans to ensure your digital product continues to perform optimally after launch. Our support services include updates, security patches, performance optimization, and more.</p>
+                                    <div class="accordion-body">
+                                        <p>Yes, we offer various support and maintenance packages to ensure your digital product continues to perform optimally after launch. Our support services include security updates, performance optimization, and feature enhancements.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="social-links">
-                            <h4>Connect With Us</h4>
-                            <div class="social-icons">
-                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <div class="faq-cta">
+                            <h4>Still have questions?</h4>
+                            <p>Can't find the answer you're looking for? Our team is happy to help.</p>
+                            <a href="#contact-form" class="btn btn-outline btn-sm">
+                                <span>Contact Support</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                                 <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
                                 <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
                             </div>
@@ -286,7 +356,6 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Our Work</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -330,14 +399,14 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript -->
-    <script src="js/main.js" type="module"></script>
+    <!-- Modern Navbar JS -->
+    <script src="js/modern-navbar.js" type="module"></script>
     <script src="js/contact.js" type="module"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Leaflet JS for Map -->
+{{ ... }}
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>

@@ -4,119 +4,247 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Form Validation
-    const contactForm = document.getElementById('contactForm');
+    // Initialize components
+    initFormValidation();
+    initAccordion();
+    initMap();
+    initFormAnimations();
+    initBackToTop();
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Reset previous error messages
-            resetFormErrors();
-            
-            // Validate form fields
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const phone = document.getElementById('phone');
-            const subject = document.getElementById('subject');
-            const message = document.getElementById('message');
-            const privacy = document.getElementById('privacy');
-            
-            let isValid = true;
-            
-            // Validate Name
-            if (!name.value.trim()) {
-                showError('name', 'Please enter your name');
-                isValid = false;
-            }
-            
-            // Validate Email
-            if (!email.value.trim()) {
-                showError('email', 'Please enter your email address');
-                isValid = false;
-            } else if (!isValidEmail(email.value.trim())) {
-                showError('email', 'Please enter a valid email address');
-                isValid = false;
-            }
-            
-            // Validate Phone (if provided)
-            if (phone.value.trim() && !isValidPhone(phone.value.trim())) {
-                showError('phone', 'Please enter a valid phone number');
-                isValid = false;
-            }
-            
-            // Validate Subject
-            if (!subject.value.trim()) {
-                showError('subject', 'Please enter a subject');
-                isValid = false;
-            }
-            
-            // Validate Message
-            if (!message.value.trim()) {
-                showError('message', 'Please enter your message');
-                isValid = false;
-            }
-            
-            // Validate Privacy Policy
-            if (!privacy.checked) {
-                showError('privacy', 'You must accept the privacy policy');
-                isValid = false;
-            }
-            
-            // If form is valid, submit it (in a real application, you would send this to a server)
-            if (isValid) {
-                // In a real application, you would send the form data to a server here
-                // For this example, we'll just show a success message
-                contactForm.style.display = 'none';
-                document.getElementById('formSuccess').style.display = 'block';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Scroll to success message
-                document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth' });
-                
-                // Log form data to console (for demo purposes)
-                const formData = {
-                    name: name.value.trim(),
-                    email: email.value.trim(),
-                    phone: phone.value.trim(),
-                    subject: subject.value.trim(),
-                    message: message.value.trim(),
-                    privacy: privacy.checked
-                };
-                console.log('Form submitted:', formData);
+    // Initialize form validation
+    function initFormValidation() {
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+        const sendAnotherBtn = document.getElementById('sendAnother');
+        
+        if (!contactForm) return;
+
+        // Add input event listeners for real-time validation
+        const formInputs = contactForm.querySelectorAll('input, textarea, select');
+        formInputs.forEach(input => {
+            // Add focus effect
+            input.addEventListener('focus', function() {
+                const inputGroup = this.closest('.input-group');
+                if (inputGroup) {
+                    inputGroup.classList.add('focused');
+                }
+            });
+
+            // Add blur effect and validate
+            input.addEventListener('blur', function() {
+                const inputGroup = this.closest('.input-group');
+                if (inputGroup) {
+                    inputGroup.classList.remove('focused');
+                }
+                validateField(this);
+            });
+
+            // Real-time validation for required fields
+            if (input.required) {
+                input.addEventListener('input', function() {
+                    validateField(this);
+                });
             }
         });
+
+        // Form submission
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Reset previous error messages and states
+            resetFormErrors();
+
+            // Validate all fields
+            let isValid = true;
+            const fieldsToValidate = [
+                { id: 'name', required: true, type: 'text' },
+                { id: 'email', required: true, type: 'email' },
+                { id: 'phone', required: false, type: 'tel' },
+                { id: 'subject', required: true, type: 'text' },
+                { id: 'message', required: true, type: 'textarea' },
+                { id: 'privacy', required: true, type: 'checkbox' }
+            ];
+
+            fieldsToValidate.forEach(field => {
+                const element = document.getElementById(field.id);
+                if (element && !validateField(element, field.required, field.type)) {
+                    isValid = false;
+                }
+            });
+
+            // If form is valid, submit it
+            if (isValid) {
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+
+                try {
+                    // Show loading state
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<span class="spinner"></span> Sending...';
+
+                    // Simulate API call (replace with actual fetch/axios call)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+
+                    // Show success message
+                    contactForm.style.opacity = '0';
+                    contactForm.style.height = '0';
+                    contactForm.style.padding = '0';
+                    contactForm.style.margin = '0';
+                    contactForm.style.overflow = 'hidden';
+
+                    // Show success message with animation
+                    formSuccess.style.display = 'block';
+                    setTimeout(() => {
+                        formSuccess.classList.add('show');
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 50);
+
+                    // Log form data to console (for demo purposes)
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        subject: document.getElementById('subject').value.trim(),
+                        message: document.getElementById('message').value.trim(),
+                        privacy: document.getElementById('privacy').checked
+                    };
+                    console.log('Form submitted:', formData);
+
+                    // In a real application, you would send the data to a server here
+                    // Example:
+                    // try {
+                    //     const response = await fetch('/api/contact', {
+                    //         method: 'POST',
+                    //         headers: { 'Content-Type': 'application/json' },
+                    //         body: JSON.stringify(formData)
+                    // });
+                    // const data = await response.json();
+                    // Handle response...
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    showFormError('An error occurred while sending your message. Please try again later.');
+                } finally {
+                    // Reset button state
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                }
+            } else {
+                // Scroll to first error
+                const firstError = contactForm.querySelector('.input-group.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.querySelector('input, textarea, select')?.focus();
+                }
+            }
+        });
+
+        // Handle "Send Another" button
+        if (sendAnotherBtn) {
+            sendAnotherBtn.addEventListener('click', function() {
+                formSuccess.classList.remove('show');
+
+                setTimeout(() => {
+                    formSuccess.style.display = 'none';
+                    contactForm.style.opacity = '1';
+                    contactForm.style.height = 'auto';
+                    contactForm.style.padding = '';
+                    contactForm.style.margin = '';
+                    contactForm.style.overflow = '';
+                    contactForm.reset();
+                    resetFormErrors();
+
+                    // Focus on first field
+                    const firstInput = contactForm.querySelector('input:not([type="hidden"]), textarea, select');
+                    if (firstInput) firstInput.focus();
+                }, 300);
+            });
+        }
     }
-    
-    // Initialize Map
+
+    // Initialize accordion functionality
+    function initAccordion() {
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+
+            if (!header || !content) return;
+
+            // Set initial state
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+            content.style.maxHeight = isExpanded ? content.scrollHeight + 'px' : '0';
+
+            // Toggle on click
+            header.addEventListener('click', function() {
+                const wasExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !wasExpanded);
+
+                if (wasExpanded) {
+                    content.style.maxHeight = '0';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+
+                    // Close other open accordion items
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherHeader = otherItem.querySelector('.accordion-header');
+                            const otherContent = otherItem.querySelector('.accordion-content');
+                            if (otherHeader && otherContent) {
+                                otherHeader.setAttribute('aria-expanded', 'false');
+                                otherContent.style.maxHeight = '0';
+                            }
+                        }
+                    });
+                }
+
+                // Add animation class
+                content.classList.add('animating');
+                setTimeout(() => content.classList.remove('animating'), 300);
+            });
+
+            // Handle keyboard navigation
+            header.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+    }
+
+    // Initialize map
     function initMap() {
-        // Check if map container exists
-        const mapContainer = document.getElementById('mapContainer');
-        if (!mapContainer) return;
-        
+        const mapElement = document.getElementById('map');
+        if (!mapElement) return;
+
+        // Check if Leaflet is loaded
+        if (typeof L === 'undefined') {
+            console.warn('Leaflet.js is not loaded. Map will not be initialized.');
+            return;
+        }
+
         // Coordinates for the map center (example: New York City)
         const mapCenter = [40.7128, -74.0060];
-        
+
         // Create map instance
         const map = L.map('mapContainer').setView(mapCenter, 13);
-        
+
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-        
+
         // Add a marker
         const marker = L.marker(mapCenter).addTo(map);
         marker.bindPopup("<b>DPi Office</b><br>123 Digital Lane, Tech City").openPopup();
-        
+
         // Handle window resize
         window.addEventListener('resize', function() {
             map.invalidateSize();
         });
     }
-    
+
     // Initialize map when Leaflet is loaded
     if (typeof L !== 'undefined') {
         initMap();
@@ -124,25 +252,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // If Leaflet isn't loaded yet, wait for it
         window.addEventListener('load', initMap);
     }
-    
+
     // Initialize accordion functionality
     const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
+
     accordionHeaders.forEach(header => {
         header.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             const content = document.getElementById(this.getAttribute('aria-controls'));
-            
+
             // Toggle aria-expanded attribute
             this.setAttribute('aria-expanded', !isExpanded);
-            
+
             // Toggle content visibility
             if (!isExpanded) {
                 content.style.maxHeight = content.scrollHeight + 'px';
             } else {
                 content.style.maxHeight = '0';
             }
-            
+
             // Close other open accordion items
             accordionHeaders.forEach(otherHeader => {
                 if (otherHeader !== header) {
@@ -155,98 +283,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
-    // Helper Functions
-    function showError(fieldId, message) {
-        const field = document.getElementById(fieldId);
-        const errorElement = document.getElementById(`${fieldId}Error`);
-        
-        if (field && errorElement) {
-            // Add error class to the field
-            field.closest('.form-group').classList.add('error');
-            
-            // Show error message
-            errorElement.textContent = message;
-            errorElement.style.display = 'block';
-            
-            // Focus on the field with error
-            field.focus();
-        }
-    }
-    
-    function resetFormErrors() {
-        const errorMessages = document.querySelectorAll('.error-message');
-        const formGroups = document.querySelectorAll('.form-group');
-        
-        errorMessages.forEach(error => {
-            error.textContent = '';
-            error.style.display = 'none';
-        });
-        
-        formGroups.forEach(group => {
-            group.classList.remove('error');
-        });
-    }
-    
-    function isValidEmail(email) {
-        // Simple email validation regex
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-    
-    function isValidPhone(phone) {
-        // Simple phone validation (allows various formats)
-        const phoneRegex = /^[+\d\s-()]{10,}$/;
-        return phoneRegex.test(phone);
-    }
-    
-    // Back to top button functionality
-    const backToTopButton = document.getElementById('backToTop');
-    
-    if (backToTopButton) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.opacity = '1';
-                backToTopButton.style.visibility = 'visible';
-            } else {
-                backToTopButton.style.opacity = '0';
-                backToTopButton.style.visibility = 'hidden';
-            }
-        });
-        
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            
+
             if (targetId === '#' || targetId.startsWith('#!')) {
                 e.preventDefault();
                 return;
             }
-            
+
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 e.preventDefault();
-                
+
                 // Close mobile menu if open
                 const navMenu = document.querySelector('.nav-menu');
                 const hamburger = document.getElementById('hamburger');
-                
+
                 if (navMenu && navMenu.classList.contains('show')) {
                     navMenu.classList.remove('show');
                     hamburger.classList.remove('active');
                 }
-                
+
                 // Calculate header height for offset
                 const header = document.querySelector('.header');
                 const headerHeight = header ? header.offsetHeight : 80;
