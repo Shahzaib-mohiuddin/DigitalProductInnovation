@@ -79,12 +79,28 @@
     </div>
 
     <main id="main-content" tabindex="-1">
-        <!-- Hero Section -->
+        <!-- Hero Section with Gradient Background -->
         <section class="contact-hero">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
             <div class="container">
                 <div class="hero-content" data-aos="fade-up">
-                    <h1>Let's Build Something Amazing Together</h1>
-                    <p>Have a project in mind or want to learn more about our services? We'd love to hear from you.</p>
+                    <span class="hero-badge">Contact Us</span>
+                    <h1>Let's Create Something Extraordinary</h1>
+                    <p>Transform your vision into reality. Our team is ready to help bring your ideas to life with innovative solutions.</p>
+                    <div class="hero-actions">
+                        <a href="#contact-form" class="btn btn-primary btn-lg">
+                            <span>Start a Conversation</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="tel:+15551234567" class="btn btn-outline-white btn-lg">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Call Now</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -280,24 +296,42 @@
                             <div class="contact-method">
                                 <div class="contact-icon">
                                     <i class="fas fa-envelope"></i>
-                                </button>
-                                <div id="faq4" class="accordion-content">
-                                    <div class="accordion-body">
-                                        <p>Yes, we offer various support and maintenance packages to ensure your digital product continues to perform optimally after launch. Our support services include security updates, performance optimization, and feature enhancements.</p>
-                                    </div>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email Address</h4>
+                                    <p><a href="mailto:hello@dpi.com">hello@dpi.com</a><br><a href="mailto:support@dpi.com">support@dpi.com</a></p>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="faq-cta">
-                            <h4>Still have questions?</h4>
-                            <p>Can't find the answer you're looking for? Our team is happy to help.</p>
-                            <a href="#contact-form" class="btn btn-outline btn-sm">
-                                <span>Contact Support</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                                <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-                                <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Phone Number</h4>
+                                    <p><a href="tel:+15551234567">+1 (555) 123-4567</a><br>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Working Hours</h4>
+                                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 3:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                            
+                            <div class="social-links">
+                                <h4>Follow Us</h4>
+                                <div class="social-icons">
+                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -309,26 +343,150 @@
         <section class="map-section" id="map">
             <div id="mapContainer"></div>
             <div class="map-overlay">
-                <div class="map-card">
-                    <h3>Our Office</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Digital Lane, Tech City, TC 12345</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> hello@dpi.com</p>
-                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
-                    <a href="#" class="btn btn-primary btn-sm">Get Directions</a>
+                <div class="container">
+                    <div class="map-card" data-aos="fade-up">
+                        <div class="map-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Our Office</h3>
+                        <div class="map-info">
+                            <p><i class="fas fa-map-marker-alt"></i> <span>123 Digital Lane, Tech City, TC 12345</span></p>
+                            <p><i class="fas fa-phone"></i> <span>+1 (555) 123-4567</span></p>
+                            <p><i class="fas fa-envelope"></i> <span>hello@dpi.com</span></p>
+                            <p><i class="fas fa-clock"></i> <span>Mon - Fri: 9:00 AM - 6:00 PM</span></p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-primary btn-sm">
+                            <span>Get Directions</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">FAQ</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <div class="section-divider center"></div>
+                    <p class="section-description">Find answers to common questions about our services and process.</p>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-column" data-aos="fade-right">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How long does it take to get a response?</span>
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Do you offer free consultations?</span>
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes! We offer a complimentary 30-minute consultation to discuss your project and explore how we can help achieve your goals.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>What information do you need for a quote?</span>
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We'll need details about your project scope, timeline, budget range, and any specific requirements you have. The more information you provide, the more accurate our quote will be.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-column" data-aos="fade-left">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Which industries do you work with?</span>
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We work with businesses across various industries including e-commerce, healthcare, finance, education, and more. Our adaptable approach allows us to deliver solutions tailored to any sector.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>What are your payment terms?</span>
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We typically work with milestone-based payments. A deposit is required to begin work, with the remainder split across project milestones. We're flexible and can discuss payment plans that work for your budget.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Do you provide ongoing support?</span>
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Absolutely! We offer maintenance and support packages to ensure your digital product continues to perform optimally. This includes updates, bug fixes, and feature enhancements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-cta-box" data-aos="fade-up">
+                    <div class="faq-cta-content">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Still Have Questions?</h3>
+                        <p>Can't find the answer you're looking for? Our support team is here to help.</p>
+                    </div>
+                    <a href="#contact-form" class="btn btn-primary">
+                        <span>Contact Support</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
         <section class="cta-section">
+            <div class="cta-gradient"></div>
             <div class="container">
                 <div class="cta-content" data-aos="fade-up">
+                    <div class="cta-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
                     <h2>Ready to Start Your Project?</h2>
-                    <p>Let's discuss how we can help you create an exceptional digital experience for your users.</p>
+                    <p>Let's discuss how we can help you create an exceptional digital experience that drives results.</p>
                     <div class="cta-buttons">
-                        <a href="#contact-form" class="btn btn-primary btn-lg">Get a Free Quote</a>
-                        <a href="tel:+15551234567" class="btn btn-outline btn-lg">Call Us Now</a>
+                        <a href="#contact-form" class="btn btn-primary btn-lg">
+                            <span>Get a Free Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="tel:+15551234567" class="btn btn-outline-white btn-lg">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Call Us Now</span>
+                        </a>
+                    </div>
+                    <div class="cta-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -402,6 +560,7 @@
     <!-- Modern Navbar JS -->
     <script src="js/modern-navbar.js" type="module"></script>
     <script src="js/contact.js" type="module"></script>
+    <script src="js/contact-faq.js"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
