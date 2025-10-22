@@ -1,0 +1,222 @@
+/* Technology Stack Section Styles */
+.section-tech-stack {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+}
+
+.tech-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 100%);
+    pointer-events: none;
+}
+
+.tech-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.tech-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tech-category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-category-header i {
+    font-size: 1.5rem;
+    color: #818cf8;
+}
+
+.tech-category-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(135deg, #818cf8 0%, #c7d2fe 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tech-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.tech-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: scale(1.02);
+}
+
+.tech-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(129, 140, 248, 0.1);
+    border-radius: 10px;
+}
+
+.tech-icon i {
+    font-size: 1.25rem;
+    color: #818cf8;
+}
+
+.tech-info {
+    flex: 1;
+}
+
+.tech-info h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.tech-level {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.level-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #818cf8 0%, #c7d2fe 100%);
+    border-radius: 2px;
+    transition: width 1s ease;
+}
+
+.tech-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(129, 140, 248, 0.1);
+    border-radius: 30px;
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: #818cf8;
+}
+
+.feature-box h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.feature-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cta-gradient {
+    background: linear-gradient(135deg, #818cf8 0%, #c7d2fe 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    margin-top: 2rem;
+}
+
+.cta-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(129, 140, 248, 0.2);
+}
+
+@media (max-width: 768px) {
+    .section-tech-stack {
+        padding: 60px 0;
+    }
+
+    .tech-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-features {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-category {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .tech-info {
+        width: 100%;
+    }
+
+    .feature-box {
+        padding: 1.5rem;
+    }
+}

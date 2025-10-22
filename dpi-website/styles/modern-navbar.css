@@ -1,43 +1,105 @@
 /* Modern Futuristic Navbar */
 .navbar-container {
-    position: fixed;
-    top: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed !important;
+    top: 1.5rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     z-index: 1000;
     width: calc(100% - 3rem);
     max-width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(15, 23, 42, 0.3);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
+    background: rgba(15, 23, 42, 0.3) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 50px !important;
     padding: 0.5rem 1.5rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     margin: 0 auto;
+}
+
+/* Ensure navbar stays fixed and doesn't move */
+body {
+    padding-top: 0;
+}
+
+main {
+    margin-top: 0;
+}
+
+/* Fix for mobile menu */
+.mobile-menu {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+}
+
+/* Ensure content doesn't jump when navbar changes state */
+html {
+    scroll-padding-top: 100px;
+}
+
+/* Remove any transform that might be causing movement */
+.navbar-container.scrolled {
+    transform: translate(-50%, 0) !important;
 }
 
 /* Navbar Logo */
 .nav-logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
     text-decoration: none;
     letter-spacing: 1px;
 }
 
-.nav-logo span {
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.7rem;
+    font-weight: 800;
     background: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 800;
+    line-height: 1;
+}
+
+.logo-separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 200;
+    margin: 0 0.3rem;
+    font-size: 1.2rem;
+}
+
+.logo-tagline {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover .logo-tagline {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-tagline {
+        display: none;
+    }
+    .logo-separator {
+        display: none;
+    }
 }
 
 /* Navbar Links */

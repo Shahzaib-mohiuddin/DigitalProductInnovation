@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/navbar-overrides.css">
+    <link rel="stylesheet" href="styles/tech-stack.css">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -140,6 +141,7 @@
         });
     </script>
     <script src="js/main.js"></script>
+    <script src="js/impact-section-new.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,7 +153,11 @@
     <div class="navbar-container" id="navbar">
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <span>DPI</span>
+                <div class="logo-container">
+                    <span class="logo-text">DPI</span>
+                    <span class="logo-separator">|</span>
+                    <span class="logo-tagline">Digital Product Innovation</span>
+                </div>
             </a>
             
             <div class="nav-menu" id="navMenu">
@@ -415,154 +421,181 @@
             </div>
         </section>
         
-        <!-- Impact Section with Animated Stats -->
-        <section class="section section-impact">
-            <div class="impact-particles" id="impact-particles"></div>
+        <!-- Technology Stack & Expertise Section -->
+        <section class="section section-tech-stack">
+            <div class="tech-backdrop"></div>
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-subtitle">Our Impact</span>
-                    <h2 class="section-title">Transforming Businesses, Delivering Results</h2>
-                    <p class="section-description">We measure our success by the success of our clients. Here's the difference we've made.</p>
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle"><i class="fas fa-code"></i> Our Expertise</span>
+                    <h2 class="section-title">Cutting-Edge <span class="highlight">Technology Stack</span></h2>
+                    <p class="section-description">We leverage the latest technologies and frameworks to build powerful, scalable, and innovative digital solutions.</p>
                 </div>
 
-                <!-- Animated Stats -->
-                <div class="impact-stats">
-                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="stat-circle">
-                            <svg class="stat-circle-bg" viewBox="0 0 36 36">
-                                <path d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    fill="none"
-                                    stroke="rgba(99, 102, 241, 0.2)"
-                                    stroke-width="3"/>
-                                <path class="stat-circle-fill"
-                                    d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    fill="none"
-                                    stroke="url(#stat-gradient-1)"
-                                    stroke-width="3"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="100, 100"/>
-                                <defs>
-                                    <linearGradient id="stat-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#6366F1" />
-                                        <stop offset="100%" stop-color="#8B5CF6" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            <div class="stat-value" data-count="150">0</div>
+                <div class="tech-categories" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Frontend Category -->
+                    <div class="tech-category">
+                        <div class="tech-category-header">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Frontend Excellence</h3>
                         </div>
-                        <h4>Projects Completed</h4>
-                        <p>Delivering excellence across industries</p>
-                    </div>
-
-                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="stat-circle">
-                            <svg class="stat-circle-bg" viewBox="0 0 36 36">
-                                <path d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    fill="none"
-                                    stroke="rgba(99, 102, 241, 0.2)"
-                                    stroke-width="3"/>
-                                <path class="stat-circle-fill"
-                                    d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    fill="none"
-                                    stroke="url(#stat-gradient-2)"
-                                    stroke-width="3"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="100, 100"/>
-                                <defs>
-                                    <linearGradient id="stat-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#EC4899" />
-                                        <stop offset="100%" stop-color="#F43F5E" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            <div class="stat-value" data-count="98">0</div>
-                        </div>
-                        <h4>Client Satisfaction</h4>
-                        <p>Consistently exceeding expectations</p>
-                    </div>
-
-                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="stat-circle">
-                            <svg class="stat-circle-bg" viewBox="0 0 36 36">
-                                <path d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    fill="none"
-                                    stroke="rgba(99, 102, 241, 0.2)"
-                                    stroke-width="3"/>
-                                <path class="stat-circle-fill"
-                                    d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    fill="none"
-                                    stroke="url(#stat-gradient-3)"
-                                    stroke-width="3"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="100, 100"/>
-                                <defs>
-                                    <linearGradient id="stat-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#10B981" />
-                                        <stop offset="100%" stop-color="#3B82F6" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            <div class="stat-value" data-count="3.5">0</div>
-                        </div>
-                        <h4>Years Experience</h4>
-                        <p>Delivering digital excellence</p>
-                    </div>
-                </div>
-
-                <!-- Interactive Timeline -->
-                <div class="impact-timeline" data-aos="fade-up" data-aos-delay="400">
-                    <div class="timeline-track">
-                        <div class="timeline-progress"></div>
-                        
-                        <div class="timeline-item" data-year="2021">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Company Founded</h4>
-                                <p>Launched with a vision to transform digital experiences</p>
+                        <div class="tech-grid">
+                            <div class="tech-card" data-tech="React">
+                                <div class="tech-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>React</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tech-card" data-tech="Next.js">
+                                <div class="tech-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Next.js</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tech-card" data-tech="Vue">
+                                <div class="tech-icon">
+                                    <i class="fab fa-vuejs"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Vue.js</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 88%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="timeline-item" data-year="2022">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>50+ Projects</h4>
-                                <p>Successfully delivered projects for clients worldwide</p>
+                    </div>
+
+                    <!-- Backend Category -->
+                    <div class="tech-category">
+                        <div class="tech-category-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Backend Power</h3>
+                        </div>
+                        <div class="tech-grid">
+                            <div class="tech-card" data-tech="Node.js">
+                                <div class="tech-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Node.js</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tech-card" data-tech="Python">
+                                <div class="tech-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Python</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 94%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tech-card" data-tech="Go">
+                                <div class="tech-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Golang</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 85%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="timeline-item" data-year="2023">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Award Winning</h4>
-                                <p>Recognized as a top digital agency</p>
-                            </div>
+                    </div>
+
+                    <!-- Cloud & DevOps -->
+                    <div class="tech-category">
+                        <div class="tech-category-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud & DevOps</h3>
                         </div>
-                        
-                        <div class="timeline-item" data-year="2024">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>150+ Projects</h4>
-                                <p>Expanded our portfolio across multiple industries</p>
+                        <div class="tech-grid">
+                            <div class="tech-card" data-tech="AWS">
+                                <div class="tech-icon">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>AWS</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 96%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tech-card" data-tech="Docker">
+                                <div class="tech-icon">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Docker</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 93%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tech-card" data-tech="Kubernetes">
+                                <div class="tech-icon">
+                                    <i class="fas fa-dharmachakra"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Kubernetes</h4>
+                                    <div class="tech-level">
+                                        <div class="level-bar" style="width: 89%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="text-center mt-6" data-aos="fade-up" data-aos-delay="500">
-                    <a href="contact.html" class="cta-button cta-glow">
-                        <span>Start Your Journey With Us</span>
+                <div class="tech-features" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>High Performance</h4>
+                        <p>Optimized for speed and efficiency</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Security First</h4>
+                        <p>Enterprise-grade security measures</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h4>Scalable</h4>
+                        <p>Built to grow with your needs</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Modern Architecture</h4>
+                        <p>Following best practices</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
+                    <a href="contact.html" class="cta-button cta-gradient">
+                        <span>Discuss Your Project</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
