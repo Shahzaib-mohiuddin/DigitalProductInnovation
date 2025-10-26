@@ -63,6 +63,50 @@
     transform: translateX(3px);
 }
 
+/* Enhanced Hero CTA Button */
+.hero-cta {
+    padding: 1.2rem 3rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    border-radius: 60px !important;
+    min-width: 200px !important;
+    box-shadow: 0 8px 25px -5px rgba(79, 70, 229, 0.5) !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%) !important;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta:hover::before {
+    left: 100%;
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 15px 35px -5px rgba(79, 70, 229, 0.6) !important;
+}
+
+.hero-cta i.fas {
+    margin-left: 12px !important;
+    font-size: 1.1rem !important;
+    transition: all 0.3s ease;
+}
+
+.hero-cta:hover i.fas {
+    transform: translateX(5px) !important;
+}
+
 /* Specific styles for CTA card button */
 .cta-card .btn-primary {
     margin-top: 1.5rem;

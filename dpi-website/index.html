@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DPi - Digital Product Innovation. We help your digital products stand out and win users.">
+    <meta name="description" content="DPi - Digital Product Innovation. We create cutting-edge digital solutions that drive business growth through innovative design and development.">
     <title>DPi - Digital Product Innovation</title>
+    
+    <!-- Performance & SEO Meta Tags -->
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://yourwebsite.com">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -24,8 +30,8 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Particles.js - Async Loading -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" async></script>
     
     <!-- Main Scripts -->
     <script>
@@ -143,10 +149,15 @@
     <script src="js/main.js"></script>
     <script src="js/impact-section-new.js"></script>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/images/hero_section_pic.jpg" as="image">
+    <link rel="preload" href="styles/main.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
 </head>
 <body>
     <!-- Modern Navbar -->
@@ -215,7 +226,6 @@
                 
                 <div class="hero-content">
                     <span class="hero-badge" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-rocket"></i> Innovation Redefined
                     </span>
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
                         Where Vision Meets <span class="text-gradient">Digital Excellence</span>
@@ -461,12 +471,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tech-card" data-tech="Vue">
+                            <div class="tech-card" data-tech="Flutter">
                                 <div class="tech-icon">
-                                    <i class="fab fa-vuejs"></i>
+                                    <i class="fas fa-mobile-alt"></i>
                                 </div>
                                 <div class="tech-info">
-                                    <h4>Vue.js</h4>
+                                    <h4>Flutter</h4>
                                     <div class="tech-level">
                                         <div class="level-bar" style="width: 88%"></div>
                                     </div>
@@ -504,12 +514,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tech-card" data-tech="Go">
+                            <div class="tech-card" data-tech="Firebase">
                                 <div class="tech-icon">
-                                    <i class="fas fa-code-branch"></i>
+                                    <i class="fas fa-fire"></i>
                                 </div>
                                 <div class="tech-info">
-                                    <h4>Golang</h4>
+                                    <h4>Firebase</h4>
                                     <div class="tech-level">
                                         <div class="level-bar" style="width: 85%"></div>
                                     </div>
@@ -518,41 +528,41 @@
                         </div>
                     </div>
 
-                    <!-- Cloud & DevOps -->
+                    <!-- Digital Services -->
                     <div class="tech-category">
                         <div class="tech-category-header">
-                            <i class="fas fa-cloud"></i>
-                            <h3>Cloud & DevOps</h3>
+                            <i class="fas fa-cogs"></i>
+                            <h3>Digital Services</h3>
                         </div>
                         <div class="tech-grid">
-                            <div class="tech-card" data-tech="AWS">
+                            <div class="tech-card" data-tech="Mobile-Apps">
                                 <div class="tech-icon">
-                                    <i class="fab fa-aws"></i>
+                                    <i class="fas fa-mobile-alt"></i>
                                 </div>
                                 <div class="tech-info">
-                                    <h4>AWS</h4>
+                                    <h4>Mobile Apps</h4>
                                     <div class="tech-level">
                                         <div class="level-bar" style="width: 96%"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tech-card" data-tech="Docker">
+                            <div class="tech-card" data-tech="Product-Strategy">
                                 <div class="tech-icon">
-                                    <i class="fab fa-docker"></i>
+                                    <i class="fas fa-chart-line"></i>
                                 </div>
                                 <div class="tech-info">
-                                    <h4>Docker</h4>
+                                    <h4>Product Strategy</h4>
                                     <div class="tech-level">
                                         <div class="level-bar" style="width: 93%"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tech-card" data-tech="Kubernetes">
+                            <div class="tech-card" data-tech="UX-Design">
                                 <div class="tech-icon">
-                                    <i class="fas fa-dharmachakra"></i>
+                                    <i class="fas fa-user-friends"></i>
                                 </div>
                                 <div class="tech-info">
-                                    <h4>Kubernetes</h4>
+                                    <h4>UX Design</h4>
                                     <div class="tech-level">
                                         <div class="level-bar" style="width: 89%"></div>
                                     </div>
@@ -593,12 +603,6 @@
                     </div>
                 </div>
 
-                <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
-                    <a href="contact.html" class="cta-button cta-gradient">
-                        <span>Discuss Your Project</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
             </div>
         </section>
         
@@ -749,6 +753,15 @@
     
     <!-- Main JavaScript -->
     <script>
+        // Error handling for external scripts
+        window.addEventListener('error', function(e) {
+            if (e.message === 'Script error.') {
+                // Suppress generic script errors from external sources
+                e.preventDefault();
+                return true;
+            }
+        });
+        
         // Initialize AOS
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof AOS !== 'undefined') {

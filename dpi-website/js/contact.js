@@ -1,6 +1,7 @@
 /**
  * Contact Page JavaScript
  * Handles form validation, map initialization, and interactive elements
+ * Updated: 2025-10-26 20:00 - Fixed initFormAnimations error
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -8,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
     initAccordion();
     initMap();
-    initFormAnimations();
     initBackToTop();
     
     // Initialize form validation
