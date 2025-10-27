@@ -1,5 +1,5 @@
 [build]
-  publish = "."
+  publish = "dpi-website"
   
 [build.environment]
   NODE_VERSION = "18"

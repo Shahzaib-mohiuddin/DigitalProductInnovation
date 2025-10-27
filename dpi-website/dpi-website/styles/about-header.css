@@ -1,0 +1,14 @@
+/* About Page Header Styles */
+.about-page .logo-text {
+    color: #1e293b !important; /* Dark blue-gray color */
+}
+
+/* Ensure the logo is visible on the white background */
+.about-page .logo {
+    text-shadow: none !important;
+}
+
+/* Update the mobile menu button color on about page */
+.about-page .hamburger span {
+    background: #1e293b !important;
+}

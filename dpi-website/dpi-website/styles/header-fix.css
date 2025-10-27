@@ -1,0 +1,49 @@
+/* Header Fix */
+.header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: rgba(15, 23, 42, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Header scrolled state - slightly more visible but still transparent */
+.header.scrolled {
+    background: rgba(15, 23, 42, 0.5) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure navbar links are visible on the transparent background */
+.nav-link {
+    color: #e2e8f0 !important;
+    transition: color 0.3s ease !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Mobile menu button */
+.hamburger span {
+    background: #e2e8f0 !important;
+}
+
+/* Logo text color */
+.logo-text {
+    color: #ffffff !important;
+}
